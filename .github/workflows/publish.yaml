@@ -6,9 +6,14 @@ jobs:
       - uses: actions/setup-go@v2
       - run: go run main.go
       - run: |
+          git config --global user.email "{{ secrets.EMAIL }}"
+          git config --global user.name "{{ github.actor }}"
           git add README.md
-          git commit -m "$(date date "+%Y-%m-%d")"
-          git push origin main
+          git commit -m "$(date "+%Y-%m-%d")"
+          git push -f origin main
 "on":
+  push:
+    branches:
+      - main
   schedule:
     - cron: 0 0 * * *
