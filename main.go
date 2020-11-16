@@ -8,6 +8,7 @@ import (
 	"os"
 	"strconv"
 	"text/template"
+	"time"
 
 	"golang.org/x/text/language"
 	"golang.org/x/text/message"
@@ -42,10 +43,17 @@ type DataPoint struct {
 	Sum Sum `json:"tot_pub_debt_out_amt"`
 }
 
+type context struct {
+	Sum  string
+	Time string
+}
+
 var output string = `
 ## United States National Debt
 
-### ${{.}} (-)
+### ${{.Sum}} (-)
+
+Last updated: {{.Time}}
 `
 
 func main() {
@@ -71,7 +79,8 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	if err := t.Execute(descriptor, sum); err != nil {
+	context := &context{sum, time.Now().Format(time.RFC822)}
+	if err := t.Execute(descriptor, context); err != nil {
 		log.Fatal(err)
 	}
 	if err := descriptor.Close(); err != nil {
