@@ -15,7 +15,7 @@ import (
 )
 
 const (
-	url string = "https://www.transparency.treasury.gov/services/api/fiscal_service/v1/accounting/od/debt_to_penny?sort=-data_date"
+	url string = "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/debt_to_penny?sort=-record_date"
 )
 
 // DataPointCollection represents a collection of DataPoint objects.
