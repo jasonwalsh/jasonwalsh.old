@@ -3,4 +3,4 @@
 
 ### $31,363,224,488,934.33 (-)
 
-Last updated: 03 Dec 22 00:15 UTC
+Last updated: 04 Dec 22 00:16 UTC
