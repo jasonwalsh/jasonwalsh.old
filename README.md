@@ -1,6 +1,6 @@
 
 ## United States National Debt
 
-### $36,214,325,271,235.26 (-)
+### $36,213,590,712,228.65 (-)
 
-Last updated: 17 Apr 25 00:23 UTC
+Last updated: 18 Apr 25 00:22 UTC
